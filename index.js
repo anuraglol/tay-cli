@@ -3,7 +3,10 @@
 import chalk from "chalk";
 import chalkAnimation from "chalk-animation";
 import inquirer from "inquirer";
-import { createSpinner } from "nanospinner"
+import { createSpinner } from "nanospinner";
+import figlet from "figlet";
+import gradiet from "gradient-string";
+import gradient from "gradient-string";
 
 console.log(chalk.bgGreen("yoo"));
 
@@ -22,8 +25,6 @@ const welcome = async () => {
   ${chalk.bgGreen("are ya kiding me")}
   `);
 };
-
-await welcome();
 
 async function handleAnswer(isCorrect) {
   const spinner = createSpinner("Checking answer...").start();
@@ -51,8 +52,6 @@ const askName = async () => {
   playerName = answer.player_name;
 };
 
-await askName();
-
 const question1 = async () => {
   const answers = await inquirer.prompt({
     name: "question_1",
@@ -61,7 +60,19 @@ const question1 = async () => {
     choices: ["im fine, wbu", "sutup", "no u"],
   });
 
-  return handleAnswer(answers.question_1 == "no u")
+  return handleAnswer(answers.question_1 == "no u");
 };
 
+const winner = async () => {
+  console.clear();
+  const msg = `ok, ${playerName}, you got it`;
+
+  figlet(msg, (err, data) => {
+    console.log(gradient.pastel.multiline(data));
+  });
+};
+
+await welcome()
+await askName()
 await question1()
+await winner()
