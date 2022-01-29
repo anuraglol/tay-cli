@@ -1,6 +1,6 @@
 {
   "name": "tay-cli",
-  "version": "1.0.0",
+  "version": "1.0.69",
   "main": "index.js",
   "type": "module",
   "repository": "https://github.com/kr-anurag/cli-tool",
