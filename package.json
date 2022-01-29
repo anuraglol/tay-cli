@@ -1,11 +1,15 @@
 {
-  "name": "cli-tool",
+  "name": "tay-cli",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "repository": "https://github.com/kr-anurag/cli-tool",
   "author": "Anurag <kr.anurag24@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "node ."
+  },
+  "bin": "./index.js",
   "dependencies": {
     "chalk": "^5.0.0",
     "chalk-animation": "^1.0.0",
