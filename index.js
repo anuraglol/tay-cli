@@ -1,4 +1,4 @@
-#!usr/bin/env node
+#!/usr/bin/env node
 
 import chalk from "chalk";
 import chalkAnimation from "chalk-animation";
@@ -72,7 +72,7 @@ const winner = async () => {
   });
 };
 
-await welcome()
-await askName()
-await question1()
-await winner()
+await welcome();
+await askName();
+await question1();
+await winner();
